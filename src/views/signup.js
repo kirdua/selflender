@@ -10,7 +10,8 @@ class SignUp extends React.Component {
       firstName:"",
       lastName: "",
       address1: "",
-      address2: ""
+      address2: "",
+      showError: false
     };
   }
 
@@ -36,13 +37,15 @@ handleSubmit = (event) => {
     const user = [];
 
     if(firstName && lastName && address1){
-      user.push(firstName, lastName, address1, address2)
+      user.push(firstName, lastName, address1, address2);
+      alert(user);
     }
-    alert(user);
+
   }
 
   render(){
     const {arrow} = this.props;
+    const {showError} = this.state;
 
     return(
       <div className="signup-default">
@@ -51,27 +54,33 @@ handleSubmit = (event) => {
             <label className="signup-label">
               FIRST NAME
             </label>
+            <label className={`error ${showError ? 'hidden' : 'shown'}`}>
+              REQUIRED
+            </label>
             <input className="signup"
               type="text"
-              required
               onChange={this.handleFirstName}
               />
 
             <label className="signup-label">
               LAST NAME
             </label>
+            <label className={`error`}>
+              REQUIRED
+            </label>
             <input className="signup"
               type="text"
-              required
               onChange={this.handleLastName}
               />
 
             <label className="signup-label">
               ADDRESS
             </label>
+            <label className={`error`}>
+              REQUIRED
+            </label>
             <input className="signup"
               type="text"
-              required
               onChange={this.handleAddressOne}
               />
 

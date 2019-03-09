@@ -24,6 +24,21 @@
   color:#666666;
 }
 
+.error {
+  margin-left: 5px;
+  font-family: 'Merriweather';
+  font-size: 12px;
+  color:#E70000;
+}
+
+.shown {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: visible;
+}
+
 input[type=text] {
   width: 100%;
   padding: 12px 24px;
