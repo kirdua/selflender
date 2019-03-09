@@ -11,7 +11,7 @@ class SignUp extends React.Component {
       lastName: "",
       address1: "",
       address2: "",
-      showError: false
+      hasError: false
     };
   }
 
@@ -38,14 +38,16 @@ handleSubmit = (event) => {
 
     if(firstName && lastName && address1){
       user.push(firstName, lastName, address1, address2);
+      this.setState({hasError: false});
       alert(user);
+    } else {
+      this.setState({hasError: true});
     }
-
   }
 
   render(){
     const {arrow} = this.props;
-    const {showError} = this.state;
+    const {hasError} = this.state;
 
     return(
       <div className="signup-default">
@@ -54,7 +56,7 @@ handleSubmit = (event) => {
             <label className="signup-label">
               FIRST NAME
             </label>
-            <label className={`error ${showError ? 'hidden' : 'shown'}`}>
+            <label className={"error " + (!hasError ? 'hideError' : 'showError')}>
               REQUIRED
             </label>
             <input className="signup"
@@ -65,7 +67,7 @@ handleSubmit = (event) => {
             <label className="signup-label">
               LAST NAME
             </label>
-            <label className={`error`}>
+            <label className={"error " + (!hasError ? 'hideError' : 'showError')}>
               REQUIRED
             </label>
             <input className="signup"
@@ -76,7 +78,7 @@ handleSubmit = (event) => {
             <label className="signup-label">
               ADDRESS
             </label>
-            <label className={`error`}>
+            <label className={"error " + (!hasError ? 'hideError' : 'showError')}>
               REQUIRED
             </label>
             <input className="signup"

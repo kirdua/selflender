@@ -31,12 +31,12 @@
   color:#E70000;
 }
 
-.shown {
+.showError {
   visibility: visible;
 }
 
-.hidden {
-  visibility: visible;
+.hideError {
+  visibility: hidden;
 }
 
 input[type=text] {
