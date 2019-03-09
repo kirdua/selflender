@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.wel-main {
+  width: 50vw;
+  height:100vh;
+  display: inline-block;
+  position: relative;
+  background-color: #585858;
+}
+
+.wel-info-box {
+  width: 535px;
+  position: absolute;
+  right: 0px;
+}
+
+.logo {
+  width: 177px;
+  height:26px;
+  margin-top: 32px;
+  margin: 32px auto 0 auto;
+}
+
+h1 {
+  color:#ffffff;
+  font-weight:bold;
+  font-size: 32px;
+}
+
+.wel-info {
+  margin-top: 16px;
+  color:#eaeaea;
+  font-family: 'Merriweather';
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1070px) {
+  .wel-main {
+    display: block;
+    width:100vw;
+    height:22vh;
+    background-color: #585858;
+  }
+
+  .wel-info-box {
+    width:95%;
+  }
+}
